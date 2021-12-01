@@ -1,5 +1,3 @@
-#![feature(array_windows)]
-
 use std::option::Option;
 use std::option::Option::Some;
 use aoc2021::read_asset;
