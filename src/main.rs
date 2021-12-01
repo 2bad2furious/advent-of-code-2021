@@ -4,10 +4,9 @@ mod aoc2020;
 mod aoc2021;
 mod utils;
 
-use std::fs::File;
-use aoc2021::day1;
+use aoc2020::day13;
 
 fn main() {
-  day1::part2();
+  day13::solve_part2();
 }
 

@@ -1,9 +1,5 @@
-use super::*;
-
 #[cfg(test)]
 mod tests {
-    use std::option::Option;
-    use std::option::Option::None;
     use aoc::aoc2021::day1::{solve_part1, solve_part2};
 
     const TEST_NUMBERS: [u32; 10] = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];

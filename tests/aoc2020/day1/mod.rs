@@ -1,5 +1,3 @@
-use super::*;
-
 #[cfg(test)]
 mod tests {
     use aoc::aoc2020::day1::{part1, part2};

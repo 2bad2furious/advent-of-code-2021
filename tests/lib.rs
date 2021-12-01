@@ -5,8 +5,7 @@ mod aoc2021;
 
 #[cfg(test)]
 mod tests {
-    use aoc::aoc2020::day1::part1;
-    use super::*;
+
 
     #[test]
     fn it_works() {
