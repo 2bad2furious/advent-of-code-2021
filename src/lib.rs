@@ -1,4 +1,4 @@
-use std::fs::read_to_string;
+#![feature(array_windows)]
 
 pub mod aoc2020;
 pub mod aoc2021;

@@ -1,6 +1,7 @@
 extern crate aoc;
 
 mod aoc2020;
+mod aoc2021;
 
 #[cfg(test)]
 mod tests {

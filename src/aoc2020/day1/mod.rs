@@ -1,4 +1,3 @@
-use std::fs::File;
 use std::io::{Error, ErrorKind};
 
 use aoc2020::read_asset;
