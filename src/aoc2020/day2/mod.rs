@@ -26,6 +26,11 @@ pub fn solve_part1() {
     println!("{}", part1(input.as_ref()))
 }
 
+pub fn solve_part2(){
+    let input = get_input();
+    println!("{}", part2(input.as_ref()))
+}
+
 pub fn part1(passwords: &[PasswordConfig]) -> usize {
     return passwords.iter()
         .filter(|p| -> bool {
@@ -34,6 +39,14 @@ pub fn part1(passwords: &[PasswordConfig]) -> usize {
         .count();
 }
 
+pub fn part2(passwords: &[PasswordConfig]) -> usize {
+    return passwords.iter()
+        .filter(|p| -> bool {
+            let some_char = Some(p.ch);
+            (p.word.chars().nth((p.range.start() - 1)as usize) == some_char) ^ (p.word.chars().nth((p.range.end() - 1) as usize) == some_char)
+        })
+        .count();
+}
 
 pub struct PasswordConfig {
     pub range: RangeInclusive<u32>,

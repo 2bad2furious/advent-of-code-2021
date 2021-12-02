@@ -8,6 +8,6 @@ mod utils;
 use aoc2020::day2;
 
 fn main() {
-  day2::solve_part1();
+  day2::solve_part2();
 }
 
