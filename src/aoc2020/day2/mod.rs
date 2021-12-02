@@ -1,23 +1,32 @@
+use std::convert::TryInto;
 use std::ops::{Range, RangeInclusive};
+
+use regex::Regex;
+
 use aoc2020::read_asset;
 
-/*const RE: regex::Regex = "a";
-
-pub fn get_input()-> &[PasswordConfig<&str>] {
+pub fn get_input() -> Vec<PasswordConfig> {
+    let pattern: Regex = Regex::new(r"(\d+)-(\d+) ([a-z]): ([a-z]+)").unwrap();
     return read_asset(2)
-        .split_whitespace()
+        .lines()
         .map(|s| {
-            RE.
-            PasswordConfig {}
+            let captures = pattern.captures(s).unwrap();
+            let start: u32 = captures.get(1).unwrap().as_str().parse().unwrap();
+            let end: u32 = captures.get(2).unwrap().as_str().parse().unwrap();
+            let range = RangeInclusive::new(start, end);
+            let ch: char = captures.get(3).unwrap().as_str().chars().next().unwrap();
+            let word: String = captures.get(4).unwrap().as_str().into();
+            return PasswordConfig { range, ch, word };
         })
-        .collect()
-}*/
-
-pub fn solve_part1(){
-
+        .collect();
 }
 
-pub fn part1(passwords: &[PasswordConfig<&str>]) -> usize {
+pub fn solve_part1() {
+    let input = get_input();
+    println!("{}", part1(input.as_ref()))
+}
+
+pub fn part1(passwords: &[PasswordConfig]) -> usize {
     return passwords.iter()
         .filter(|p| -> bool {
             p.range.contains(&(p.word.chars().filter(|c| c == &p.ch).count() as u32))
@@ -26,8 +35,8 @@ pub fn part1(passwords: &[PasswordConfig<&str>]) -> usize {
 }
 
 
-pub struct PasswordConfig<T: Sized> {
+pub struct PasswordConfig {
     pub range: RangeInclusive<u32>,
     pub ch: char,
-    pub word: T,
+    pub word: String,
 }

@@ -4,10 +4,10 @@ mod tests {
 
     use aoc::aoc2020::day2::{part1, PasswordConfig};
 
-    const INPUT: [PasswordConfig<&str>; 3] = [
-        PasswordConfig { range: RangeInclusive::new(1, 3), ch: 'a', word: "abcde" },
-        PasswordConfig { range: RangeInclusive::new(1,3), ch: 'b', word: "cdefg" },
-        PasswordConfig { range: RangeInclusive::new(2, 9), ch: 'c', word: "ccccccccc" }
+    const INPUT: [PasswordConfig; 3] = [
+        PasswordConfig { range: RangeInclusive::new(1, 3), ch: 'a', word: "abcde".to_string() },
+        PasswordConfig { range: RangeInclusive::new(1,3), ch: 'b', word: "cdefg".to_string() },
+        PasswordConfig { range: RangeInclusive::new(2, 9), ch: 'c', word: "ccccccccc".to_string() }
     ];
 
     #[test]
