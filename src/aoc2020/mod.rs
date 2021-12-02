@@ -1,4 +1,5 @@
 pub mod day1;
+pub mod day2;
 pub mod day13;
 
 use utils::read_asset as read_global_asset;
